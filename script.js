@@ -29,7 +29,7 @@ cells.forEach(cells => {
         } else if (selection === 'eraser') {
             cells.style.opacity = '0';
         } else if (selection === 'rgb') {
-            cells.style.opacity = '1'
+            cells.style.opacity = '1';
             let random = '#'+Math.floor(Math.random() * 16777215).toString(16);
             cells.style.background = random;
 }})})}
