@@ -1,0 +1,90 @@
+@font-face {
+    font-family: customFont;
+    src: url(fonts/vonique-64/Vonique\ 64\ Bold.ttf);
+}
+
+/*body {
+    background-image: -webkit-repeating-linear-gradient(45deg, #000000, #1a1110, #353839,#76736f, #353839, #1a1110, #000000);
+}*/
+
+html,
+body, 
+#wrapper {
+    height: 100%;
+    margin: 0;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    border: 6px solid black;
+    border-radius: 10px;
+}
+
+h1 {
+    font-family: customFont;
+    font-size: 60px;
+    padding: 20px;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+}
+
+#display {
+    display: grid;
+    outline: 6px solid black;
+    border-radius: 12px;
+    height: 650px;
+    width: 800px;
+}
+
+#sizeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#colourContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-end;
+    height: 4vh;
+}
+
+.cell {
+    border: 0;
+    margin: 0;
+    background-color: #101010;
+    opacity: 0;
+}
+
+button {
+    height: 60px;
+    padding: 6px;
+    border-radius: 6px;
+    width: 100px;
+}
