@@ -1,12 +1,13 @@
 let selection = '';
-
+let colorInput = document.querySelector('#colorInput');
 const display = document.querySelector('#display');
-const btnReset = document.querySelector('#reset')
 const btnResize = document.querySelector('#resize')
 const btnDraw = document.querySelector('#draw').addEventListener('click' , e => selection = 'draw');
 const btnShade = document.querySelector('#shade').addEventListener('click' , e => selection = 'shade');
 const btnRGB= document.querySelector('#rgb').addEventListener('click' , e => selection = 'rgb');
 const btnErase = document.querySelector('#eraser').addEventListener('click' , e => selection = 'eraser');
+const btnColor = document.querySelector('#color').addEventListener('click' , e => selection = 'color');
+
 
 function createGrid(rows, columns) {
     for(let i = 0; i < (rows * columns); i++) {
@@ -24,14 +25,22 @@ cells.forEach(cells => {
     cells.addEventListener('mouseover' , function(e) {
         if (selection === 'draw') {
             cells.style.opacity = '1';
+            cells.style.background = 'black'
         } else if (selection === 'shade') {
+            if (cells.style.opacity < 0.1) {
+                cells.style.opacity =  0;
+                cells.style.background = 'black'
+            }
             cells.style.opacity = (parseFloat(cells.style.opacity) || 0 ) + 0.1;
         } else if (selection === 'eraser') {
-            cells.style.opacity = '0';
+            cells.style.opacity = '0'
         } else if (selection === 'rgb') {
-            cells.style.opacity = '1';
+            cells.style.opacity = '1'
             let random = '#'+Math.floor(Math.random() * 16777215).toString(16);
             cells.style.background = random;
+        } else if (selection = 'color') {
+            cells.style.opacity = '1'
+            cells.style.background = colorInput.value;
 }})})}
 game()
 
@@ -47,9 +56,3 @@ function resize() {
         game();
 }}
 
-btnReset.addEventListener('click' , reset)
-function reset() {
-    const allCells = document.querySelectorAll('.cell');
-    allCells.forEach((allCells) => {
-        allCells.style.opacity = '0';
-})}  
