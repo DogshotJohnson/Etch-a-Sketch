@@ -22,7 +22,7 @@ createGrid(16, 16);
 function game() {
 let cells = document.querySelectorAll('.cell');
 cells.forEach(cells => {
-    cells.addEventListener('mouseover' , function(e) {
+    cells.addEventListener('mouseenter' , function(e) {
         if (selection === 'draw') {
             cells.style.opacity = '1';
             cells.style.background = 'black'
@@ -30,8 +30,7 @@ cells.forEach(cells => {
             if (cells.style.opacity < 0.1) {
                 cells.style.opacity =  0;
                 cells.style.background = 'black'
-            }
-            cells.style.opacity = (parseFloat(cells.style.opacity) || 0 ) + 0.1;
+            } cells.style.opacity = (parseFloat(cells.style.opacity) || 0 ) + 0.1;
         } else if (selection === 'eraser') {
             cells.style.opacity = '0'
         } else if (selection === 'rgb') {
